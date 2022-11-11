@@ -1,0 +1,45 @@
+{
+    "editor.tabSize": 2,
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.iconTheme": "vscode-icons",
+    //项目所在路径
+    // "PROJECT_PATH": "C:/8266/MyProjectForESP32_AT_v4.2.2-76-gefa6eca8b8/my_examples/my_app_main",
+    "PROJECT_PATH": "C:/8266/MyProjectForESP32_AT_v4.2.2-76-gefa6eca8b8",
+    // "IDF_PYTHON_ENV_PATH": "C:/Python38-32",
+    "COM_NUM": "COM10",
+    "com": "{$env:path}",
+    "terminal.integrated.env.windows": {
+        "IDF_PATH": "C:/8266/MyProjectForESP32_AT_v4.2.2-76-gefa6eca8b8/esp-idf",
+        "IDF_PYTHON_ENV_PATH": "C:/Espressif/python_env/idf4.2_py3.8_env",
+        "path": "${env:path};C:/Espressif/tools/xtensa-esp32-elf/esp-2020r3-8.4.0/xtensa-esp32-elf/bin",
+        // "PYTHONPATH":"${workspaceFolder};${env:PYTHONPATH}"
+        // "${workspaceFolder};${env:PYTHONPATH}"
+    },
+    "files.associations": {
+        "gpio.h": "c",
+        "freertos.h": "c",
+        "hello_world_user.h": "c",
+        "gpio_user.h": "c"
+    }
+}
+
+// {
+//     "editor.tabSize": 2,
+//     "workbench.colorTheme": "Default Dark+",
+//     "workbench.iconTheme": "vscode-icons",
+//     //项目所在路径
+//     "PROJECT_PATH": "D:/MyProjectForESP_AT",
+//     "COM_NUM": "COM16",
+//     "terminal.integrated.env.windows": {
+//         "IDF_PATH": "D:/MyProjectForESP_AT/esp-idf",
+//     },
+//     "terminal.integrated.env.linux": {
+        
+//     },
+//     "files.associations": {
+//         "gpio.h": "c",
+//         "freertos.h": "c",
+//         "hello_world_user.h": "c",
+//         "gpio_user.h": "c"
+//     }
+// }

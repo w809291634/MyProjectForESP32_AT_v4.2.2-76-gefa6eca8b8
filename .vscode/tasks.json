@@ -1,0 +1,110 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "echo value",
+      "command": "echo ${config:com}",
+      "args": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "menuconfig",
+      "command": "mintty.exe -h always -e python ./build.py menuconfig",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "first menuconfig",
+      "command": "python ./build.py menuconfig",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "type": "shell",
+      "label": "build",
+      "command": "python ./build.py build",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "rebuild",
+      "command": "python ./build.py build",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "group": "build",
+      "dependsOn": [
+        "clean"
+      ]
+    },
+    {
+      "type": "shell",
+      "label": "flash",
+      "command": "python ./build.py -p ${config:COM_NUM} flash ",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "flash monitor",
+      "command": "python ./build.py -p ${config:COM_NUM} flash monitor",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "erase_flash",
+      "command": "python ./build.py erase_flash -p ${config:COM_NUM} ",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "clean",
+      "command": "python ./build.py clean",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "help",
+      "command": "python ./build.py --help",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "group": "build"
+    }
+  ]
+}
+
