@@ -1188,7 +1188,7 @@ CONFIG_ESP_AT_FW_VERSION="2.2.0"
 #
 # Compatibility options
 #
-# CONFIG_LEGACY_INCLUDE_COMMON_HEADERS is not set
+CONFIG_LEGACY_INCLUDE_COMMON_HEADERS=y
 # end of Compatibility options
 
 # Deprecated options for backward compatibility

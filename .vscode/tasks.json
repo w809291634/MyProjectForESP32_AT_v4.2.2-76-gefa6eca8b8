@@ -13,16 +13,7 @@
     {
       "type": "shell",
       "label": "menuconfig",
-      "command": "mintty.exe -h always -e python ./build.py menuconfig",
-      "args": [],
-      "options": {
-        "cwd": "${config:PROJECT_PATH}"
-      }
-    },
-    {
-      "type": "shell",
-      "label": "first menuconfig",
-      "command": "python ./build.py menuconfig",
+      "command": "start ./menuconfig.bat ",
       "args": [],
       "options": {
         "cwd": "${config:PROJECT_PATH}"
@@ -34,7 +25,7 @@
     {
       "type": "shell",
       "label": "build",
-      "command": "python ./build.py build",
+      "command": " python ./build.py build",
       "args": [],
       "options": {
         "cwd": "${config:PROJECT_PATH}"

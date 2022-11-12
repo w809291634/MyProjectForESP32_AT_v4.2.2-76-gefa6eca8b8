@@ -366,7 +366,7 @@ def main():
     print('platform_name={},module_name={}'.format(platform_name, module_name))
     build_args = ' '.join(argv)
 
-    auto_update_idf(platform_name, module_name)
+    # auto_update_idf(platform_name, module_name)
 
     build_project(platform_name, module_name, silence, build_args)
 
