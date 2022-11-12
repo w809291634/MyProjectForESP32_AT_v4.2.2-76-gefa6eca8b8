@@ -4,7 +4,7 @@
     {
       "type": "shell",
       "label": "echo value",
-      "command": "echo ${config:com}",
+      "command": "echo ${config:FLASH_COM_NUM}",
       "args": [],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -49,7 +49,7 @@
     {
       "type": "shell",
       "label": "flash",
-      "command": "python ./build.py -p ${config:COM_NUM} flash ",
+      "command": "python ./build.py -p ${config:FLASH_COM_NUM} flash ",
       "args": [],
       "options": {
         "cwd": "${config:PROJECT_PATH}"
@@ -59,7 +59,7 @@
     {
       "type": "shell",
       "label": "flash monitor",
-      "command": "python ./build.py -p ${config:COM_NUM} flash monitor",
+      "command": "python ./build.py -p ${config:FLASH_COM_NUM} flash monitor",
       "args": [],
       "options": {
         "cwd": "${config:PROJECT_PATH}"
@@ -69,7 +69,7 @@
     {
       "type": "shell",
       "label": "erase_flash",
-      "command": "python ./build.py erase_flash -p ${config:COM_NUM} ",
+      "command": "python ./build.py erase_flash -p ${config:FLASH_COM_NUM} ",
       "args": [],
       "options": {
         "cwd": "${config:PROJECT_PATH}"
@@ -85,6 +85,42 @@
         "cwd": "${config:PROJECT_PATH}"
       },
       "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "idf.py build flash",
+      "command": "python ./build.py build flash -p ${config:FLASH_COM_NUM} -b ${config:FLASH_COM_BAUD}",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "group": "build",
+      "runOptions": {}
+    },
+    // 使用putty终端启动串口监视，这样能够兼容console组件
+    {
+      "type": "shell",
+      "label": "idf.py build flash putty",
+      "command": "putty -serial ${config:MONITOR_COM_NUM} -sercfg ${config:MONITOR_COM_BAUD},8,n,1,N",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "group": "build",
+      "dependsOn": [
+        "idf.py build flash"
+      ]
+    },
+    // 使用putty终端启动串口监视，这样能够兼容console组件
+    {
+      "type": "shell",
+      "label": "putty",
+      "command": "putty -serial ${config:MONITOR_COM_NUM} -sercfg ${config:MONITOR_COM_BAUD},8,n,1,N",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "group": "build",
     },
     {
       "type": "shell",
