@@ -24,6 +24,18 @@
     },
     {
       "type": "shell",
+      "label": "first menuconfig",
+      "command": "python ./build.py  menuconfig",
+      "args": [],
+      "options": {
+        "cwd": "${config:PROJECT_PATH}"
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "type": "shell",
       "label": "build",
       "command": " python ./build.py build",
       "args": [],
